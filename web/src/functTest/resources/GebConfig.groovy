@@ -1,11 +1,11 @@
-import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.htmlunit.HtmlUnitDriver
 
 waiting {
     timeout = 2
 }
 
 environments {
-    firefox {
-        driver = { new FirefoxDriver() }
+    chrome {
+        driver = { new HtmlUnitDriver() }
     }
 }

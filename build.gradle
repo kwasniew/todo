@@ -16,7 +16,7 @@ allprojects {
 
 subprojects {
     apply plugin: 'java'
-    apply from: "$rootDir/gradle/jacoco.gradle"
+    apply plugin: "jacoco"
 
     repositories {
         mavenCentral()
@@ -34,5 +34,5 @@ subprojects {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.7'
+    gradleVersion = '2.0'
 }

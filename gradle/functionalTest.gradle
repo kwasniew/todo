@@ -16,7 +16,7 @@ dependencies {
     testCompile 'junit:junit:4.11'
     functTestCompile 'org.codehaus.geb:geb-junit4:0.7.2'
     functTestCompile "$seleniumGroup:selenium-api:$seleniumVersion"
-    functTestRuntime "$seleniumGroup:selenium-firefox-driver:$seleniumVersion"
+    functTestRuntime "$seleniumGroup:selenium-htmlunit-driver:$seleniumVersion"
 }
 
 sourceSets {
@@ -31,7 +31,7 @@ sourceSets {
 ext {
     functionalTestReportDir = file("$test.reports.html.destination/functional")
     functionalTestResultsDir = file("$test.reports.junitXml.destination/functional")
-    functionalCommonSystemProperties = ['geb.env': 'firefox', 'geb.build.reportsDir': reporting.file("$name/geb")]
+    functionalCommonSystemProperties = ['geb.env': 'htmlunit', 'geb.build.reportsDir': reporting.file("$name/geb")]
 }
 
 ext {
