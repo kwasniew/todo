@@ -73,5 +73,5 @@ task remoteFunctionalTest(type: Test) {
     reports.html.destination = functionalTestReportDir
     reports.junitXml.destination = functionalTestResultsDir
     systemProperties functionalCommonSystemProperties
-    systemProperty 'geb.build.baseUrl', "http://$config.tomcat.hostname:$config.tomcat.port/$config.tomcat.context/"
+    systemProperty 'geb.build.baseUrl', "http://$config.server.hostname:$config.server.port/$config.server.context/"
 }
