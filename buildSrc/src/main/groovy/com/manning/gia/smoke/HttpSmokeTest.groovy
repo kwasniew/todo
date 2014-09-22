@@ -30,6 +30,6 @@ class HttpSmokeTest extends DefaultTask {
            resp.status
         }
 
-        responseStatus != HttpURLConnection.HTTP_OK
+        responseStatus == HttpURLConnection.HTTP_OK || responseStatus == HttpURLConnection.HTTP_MOVED_TEMP
     }
 }
