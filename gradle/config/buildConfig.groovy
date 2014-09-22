@@ -1,6 +1,6 @@
 binaryRepository {
     baseUrl = 'http://localhost:8081/artifactory'
-    releaseUrl = "$baseUrl/simple/libs-release-local"
+    releaseUrl = "$baseUrl/libs-release-local"
     username = 'admin'
     password = 'password'
 }
