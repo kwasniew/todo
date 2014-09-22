@@ -1,18 +1,21 @@
 binaryRepository {
     baseUrl = 'http://localhost:8081/artifactory'
-    releaseUrl = "$baseUrl/libs-release-local"
+    releaseUrl = "$baseUrl/simple/libs-release-local"
     username = 'admin'
     password = 'password'
 }
 
+
 environments {
     test {
         server {
-            hostname = 'localhost'
+            hostname = '192.168.2.33'
             sshPort = 22
-            port = 8099
+            //port = 8099
+            port = 8080
             context = 'todo'
-            username = 'manager'
+            //username = 'manager'
+            username = 'vagrant'
             password = 'manager'
         }
     }

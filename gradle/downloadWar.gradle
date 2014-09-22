@@ -9,7 +9,7 @@ configurations {
 }
 
 dependencies {
-    todo group: project.group, name: project.name, version: project.version.toString(), ext: 'war'
+    todo group: project.group, name: 'todo-web', version: project.version.toString(), ext: 'war'
 }
 
 ext.downloadDir = file("$buildDir/download/artifacts")
@@ -17,4 +17,8 @@ ext.downloadDir = file("$buildDir/download/artifacts")
 task fetchToDoWar(type: Copy) {
     from configurations.todo
     into downloadDir
+
+    doLast {
+    	logger.error("---------" + project.version.toString())
+    }
 }

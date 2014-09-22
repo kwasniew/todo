@@ -28,6 +28,14 @@ task copyWarToServer(type: Scp, dependsOn: fetchToDoWar) {
     port = config.server.sshPort
 }
 
+task scptest {
+    doLast {
+        println vagrantKeyFile
+        println remoteTmpDir
+        
+    }
+}
+
 tasks.withType(SshExec) {
     classpath = configurations.jsch
     host = config.server.hostname
