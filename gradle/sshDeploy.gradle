@@ -4,7 +4,11 @@ import com.manning.gia.ssh.SshExec
 apply from: "$rootDir/gradle/downloadWar.gradle"
 
 ext {
-    warFile = configurations.todo.singleFile
+    try {
+        warFile = configurations.todo.singleFile
+        } catch(Exception e) {
+            warFile = file('.')
+        }
     tomcatRemoteDir = '/opt/apache-tomcat-7.0.42'
 
     userHome = System.properties['user.home']
@@ -32,7 +36,7 @@ task scptest {
     doLast {
         println vagrantKeyFile
         println remoteTmpDir
-        
+
     }
 }
 
